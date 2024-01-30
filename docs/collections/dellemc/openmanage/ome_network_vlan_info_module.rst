@@ -1,0 +1,633 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+dellemc.openmanage.ome_network_vlan_info module -- Retrieves the information about networks VLAN(s) present in OpenManage Enterprise
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `dellemc.openmanage collection <https://galaxy.ansible.com/dellemc/openmanage>`_ (version 8.5.0).
+
+    To install it, use: :code:`ansible-galaxy collection install dellemc.openmanage`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.dellemc.openmanage.ome_network_vlan_info_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`dellemc.openmanage.ome_network_vlan_info`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in dellemc.openmanage 2.1.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- This module allows to retrieve the following. - A list of all the network VLANs with their detailed information. - Information about a specific network VLAN using VLAN \ :emphasis:`id`\  or VLAN \ :emphasis:`name`\ .
+
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- python \>= 3.8.6
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ca_path"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-ca_path:
+
+      .. rst-class:: ansible-option-title
+
+      **ca_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ca_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`path`
+
+      :ansible-option-versionadded:`added in dellemc.openmanage 5.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Privacy Enhanced Mail (PEM) file that contains a CA certificate to be used for the validation.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      OpenManage Enterprise or OpenManage Enterprise Modular IP address or hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A unique identifier of the network VLAN available in the device.
+
+      \ :emphasis:`id`\  and \ :emphasis:`name`\  are mutually exclusive.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A unique name of the network VLAN available in the device.
+
+      \ :emphasis:`name`\  and \ :emphasis:`id`\  are mutually exclusive.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-password"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      OpenManage Enterprise or OpenManage Enterprise Modular password.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-port"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-port:
+
+      .. rst-class:: ansible-option-title
+
+      **port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      OpenManage Enterprise or OpenManage Enterprise Modular HTTPS port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`443`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in dellemc.openmanage 5.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The socket level timeout in seconds.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`30`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-username"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-username:
+
+      .. rst-class:: ansible-option-title
+
+      **username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      OpenManage Enterprise or OpenManage Enterprise Modular username.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validate_certs"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__parameter-validate_certs:
+
+      .. rst-class:: ansible-option-title
+
+      **validate_certs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in dellemc.openmanage 5.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`false`\ , the SSL certificates will not be validated.
+
+      Configure \ :literal:`false`\  only on personally controlled sites where self-signed certificates are used.
+
+      Prior to collection version \ :literal:`5.0.0`\ , the \ :emphasis:`validate\_certs`\  is \ :literal:`false`\  by default.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - Run this module from a system that has direct access to Dell OpenManage Enterprise.
+   - This module supports \ :literal:`check\_mode`\ .
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    ---
+    - name: Retrieve information about all network VLANs(s) available in the device
+      dellemc.openmanage.ome_network_vlan_info:
+        hostname: "192.168.0.1"
+        username: "username"
+        password: "password"
+        ca_path: "/path/to/ca_cert.pem"
+
+    - name: Retrieve information about a network VLAN using the VLAN ID
+      dellemc.openmanage.ome_network_vlan_info:
+        hostname: "192.168.0.1"
+        username: "username"
+        password: "password"
+        ca_path: "/path/to/ca_cert.pem"
+        id: 12345
+
+    - name: Retrieve information about a network VLAN using the VLAN name
+      dellemc.openmanage.ome_network_vlan_info:
+        hostname: "192.168.0.1"
+        username: "username"
+        password: "password"
+        ca_path: "/path/to/ca_cert.pem"
+        name: "Network VLAN - 1"
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-error_info"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__return-error_info:
+
+      .. rst-class:: ansible-option-title
+
+      **error_info**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-error_info" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Details of the HTTP Error.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` on HTTP error
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"error": {"@Message.ExtendedInfo": [{"Message": "Unable to process the request because an error occurred.", "MessageArgs": [], "MessageId": "GEN1234", "RelatedProperties": [], "Resolution": "Retry the operation. If the issue persists, contact your system administrator.", "Severity": "Critical"}], "code": "Base.1.0.GeneralError", "message": "A general error has occurred. See ExtendedInfo for more information."}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-msg"></div>
+
+      .. _ansible_collections.dellemc.openmanage.ome_network_vlan_info_module__return-msg:
+
+      .. rst-class:: ansible-option-title
+
+      **msg**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-msg" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Detailed information of the network VLAN(s).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"{'msg': 'Successfully retrieved the network VLAN information.', 'network\_vlan\_info': [{'CreatedBy': 'admin', 'CreationTime': '2020-09-02 18:48:42.129', 'Description': 'Description of Logical Network - 1', 'Id': 20057, 'InternalRefNWUUId': '42b9903d-93f8-4184-adcf-0772e4492f71', 'Name': 'Network VLAN - 1', 'Type': {'Description': 'This is the network for general purpose traffic. QOS Priority : Bronze.', 'Id': 1, 'Name': 'General Purpose (Bronze)', 'NetworkTrafficType': 'Ethernet', 'QosType': {'Id': 4, 'Name': 'Bronze'}, 'VendorCode': 'GeneralPurpose'}, 'UpdatedBy': None, 'UpdatedTime': '2020-09-02 18:48:42.129', 'VlanMaximum': 111, 'VlanMinimum': 111}, {'CreatedBy': 'admin', 'CreationTime': '2020-09-02 18:49:11.507', 'Description': 'Description of Logical Network - 2', 'Id': 20058, 'InternalRefNWUUId': 'e46ccb3f-ef57-4617-ac76-46c56594005c', 'Name': 'Network VLAN - 2', 'Type': {'Description': 'This is the network for general purpose traffic. QOS Priority : Silver.', 'Id': 2, 'Name': 'General Purpose (Silver)', 'NetworkTrafficType': 'Ethernet', 'QosType': {'Id': 3, 'Name': 'Silver'}, 'VendorCode': 'GeneralPurpose'}, 'UpdatedBy': None, 'UpdatedTime': '2020-09-02 18:49:11.507', 'VlanMaximum': 112, 'VlanMinimum': 112}]}"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Deepak Joshi(@deepakjoshishri)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/dell/dellemc-openmanage-ansible-modules/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/dell/dellemc-openmanage-ansible-modules" aria-role="button" target="_blank" rel="noopener external">Homepage</a>
+    <a href="https://github.com/dell/dellemc-openmanage-ansible-modules/tree/collections" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
