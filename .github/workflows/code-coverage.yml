@@ -24,7 +24,7 @@ jobs:
 # https://docs.ansible.com/ansible/latest/dev_guide/testing_units.html
 
   unit:
-    name: Unit Tests With (Ansible ${{ github.event.inputs.ansible }} with Python ${{ github.event.inputs.python }})
+    name: Unit Tests - (Ansible ${{ github.event.inputs.ansible }} Python ${{ github.event.inputs.python }})
     runs-on: ubuntu-latest
     steps:
       - name: Perform unit testing with ansible-test
