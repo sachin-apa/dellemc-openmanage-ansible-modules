@@ -5,10 +5,17 @@ on:
     inputs:
       ansible:
         description: 'Ansible Version'     
-        default: '2.17'
+        default: 'stable-2.17'
+        type: choice
+        options: 
+        - "stable-2.17"
+        - "devel"
       python:
         description: 'Python Version'     
-        default: '3.11' 
+        default: '3.11'
+        type: choice
+        options: 
+        - "3.11"
 jobs:
   
 ###
