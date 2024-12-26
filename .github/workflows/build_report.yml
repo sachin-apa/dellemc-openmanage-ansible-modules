@@ -22,5 +22,6 @@ jobs:
           coverage: always
           ansible-core-version: 'stable-2.18'
           target-python-version: '3.11'
+          files: /home/runner/work/dellemc-openmanage-ansible-modules/dellemc-openmanage-ansible-modules/ansible_collections/dellemc/openmanage/tests/output/reports/coverage=units=*.xml
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
